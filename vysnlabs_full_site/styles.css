@@ -73,25 +73,7 @@ header {
   background: #f0f4f8;
 }
 
-/* ================= Slider ================= */
-.slider {
-  position: relative;
-  overflow: hidden;
-  margin-top: 2rem;
-}
-
-.slider-track {
-  display: flex;
-  transition: transform 0.5s ease;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.slider-track::-webkit-scrollbar {
-  display: none;
-}
-
+/* ================= Slider card hover ================= */
 .slider .card {
   flex: 0 0 280px;
   margin-right: 1.5rem;
@@ -107,38 +89,18 @@ header {
   opacity: 1;
 }
 
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.9);
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
+.slider .card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-.slider-btn.prev { left: 1rem; }
-.slider-btn.next { right: 1rem; }
-
-.slider-btn:hover {
-  background: rgba(255,255,255,1);
+/* ================= Fade-in ================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* ================= Contact / Footer ================= */
-.social-links a {
-  margin-right: 1rem;
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-}
-
-footer {
-  background: #fff;
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #555;
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
