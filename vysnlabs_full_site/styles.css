@@ -2,8 +2,8 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
+  margin: 1;
+  padding: 1;
   box-sizing: border-box;
 }
 
@@ -16,7 +16,7 @@ body {
   background-color: #fff; /* clean white background */
   color: #111; /* dark text for readability */
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 a {
@@ -53,8 +53,8 @@ header {
 }
 
 .nav-logo {
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1.0rem;
   color: #111;
 }
 
