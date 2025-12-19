@@ -4,7 +4,7 @@ document.querySelectorAll(".slider").forEach(slider => {
   let autoplayInterval = 4000; // 4 seconds
   let autoplayTimer;
 
-  // ================= Fade-in using IntersectionObserver =================
+  // ================= Fade-in =================
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
@@ -17,14 +17,13 @@ document.querySelectorAll(".slider").forEach(slider => {
   );
   Array.from(cards).forEach(card => observer.observe(card));
 
-  // ================= Touch & Drag Support =================
+  // ================= Touch & Drag =================
   let isDown = false;
   let startX;
   let scrollLeft;
 
   track.addEventListener("mousedown", e => {
     isDown = true;
-    track.classList.add("active");
     startX = e.pageX - track.offsetLeft;
     scrollLeft = track.scrollLeft;
     stopAutoplay();
@@ -36,11 +35,9 @@ document.querySelectorAll(".slider").forEach(slider => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 1;
-    track.scrollLeft = scrollLeft - walk;
+    track.scrollLeft = scrollLeft - (x - startX);
   });
 
-  // Touch events
   track.addEventListener("touchstart", e => {
     startX = e.touches[0].pageX - track.offsetLeft;
     scrollLeft = track.scrollLeft;
@@ -49,11 +46,10 @@ document.querySelectorAll(".slider").forEach(slider => {
 
   track.addEventListener("touchmove", e => {
     const x = e.touches[0].pageX - track.offsetLeft;
-    const walk = (x - startX) * 1;
-    track.scrollLeft = scrollLeft - walk;
+    track.scrollLeft = scrollLeft - (x - startX);
   });
 
-  // ================= Button Controls =================
+  // ================= Buttons =================
   const prev = slider.querySelector(".slider-btn.prev");
   const next = slider.querySelector(".slider-btn.next");
 
@@ -72,19 +68,14 @@ document.querySelectorAll(".slider").forEach(slider => {
     autoplayTimer = setInterval(() => {
       const firstCard = cards[0];
       track.scrollBy({ left: cards[0].offsetWidth + 24, behavior: "smooth" });
-
-      // Loop: move first card to the end after scrolling
       setTimeout(() => {
         track.appendChild(firstCard);
         track.scrollLeft -= firstCard.offsetWidth + 24;
-      }, 500); // slightly after scroll animation
+      }, 500);
     }, autoplayInterval);
   };
 
-  const stopAutoplay = () => {
-    clearInterval(autoplayTimer);
-  };
+  const stopAutoplay = () => clearInterval(autoplayTimer);
 
-  // Start autoplay on page load
   startAutoplay();
 });
