@@ -274,3 +274,65 @@ footer {
     display: none; /* hide for mobile, implement burger later if needed */
   }
 }
+/* ================= Slider ================= */
+.slider {
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.slider .card {
+  flex: 0 0 280px; /* card width */
+  margin-right: 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+
+.slider .card.is-visible {
+  opacity: 1;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-btn.prev { left: 1rem; }
+.slider-btn.next { right: 1rem; }
+
+.slider-btn:hover {
+  background: rgba(255,255,255,1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .slider .card {
+    flex: 0 0 220px;
+  }
+}
+
