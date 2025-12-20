@@ -219,3 +219,97 @@ header {
   transform: translateY(-4px);
   box-shadow: 0 20px 50px rgba(0,0,0,0.12);
 }
+  /* ================= Apple-style Dark Mode ================= */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0b0b0d;
+    color: #f5f5f7;
+  }
+
+  header {
+    background: rgba(11, 11, 13, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .nav-logo {
+    color: #f5f5f7;
+  }
+
+  .nav-links a {
+    color: #c7c7cc;
+  }
+
+  .nav-links a:hover {
+    color: #ffffff;
+  }
+
+  .hero {
+    background: radial-gradient(
+      circle at top,
+      #1c1c1e 0%,
+      #0b0b0d 60%
+    );
+  }
+
+  .section {
+    background: #0b0b0d;
+  }
+
+  .section--alt {
+    background: #111113;
+  }
+
+  h1, h2, h3, h4 {
+    color: #f5f5f7;
+  }
+
+  p {
+    color: #c7c7cc;
+  }
+
+  .btn-primary {
+    background: #ffffff;
+    color: #0b0b0d;
+  }
+
+  .btn-primary:hover {
+    background: #e5e5e7;
+  }
+
+  /* Feature cards */
+  .feature-card {
+    background: #1c1c1e;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  }
+
+  .feature-card p {
+    color: #c7c7cc;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+  }
+
+  /* Footer */
+  footer {
+    background: #0b0b0d;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-content p {
+    color: #8e8e93;
+  }
+
+  /* Social icons */
+  .social-links a {
+    color: #f5f5f7;
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  .social-links a:hover {
+    background: #1c1c1e;
+  }
+}
+
