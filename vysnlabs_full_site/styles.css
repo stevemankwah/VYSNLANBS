@@ -12,6 +12,7 @@ body {
   padding: 2rem;
 }
 
+/* ================= Header ================= */
 header {
   padding: 1rem 0;
   background: #fff;
@@ -36,6 +37,7 @@ header {
   font-weight: 500;
 }
 
+/* ================= Hero ================= */
 .hero {
   text-align: center;
   padding: 6rem 2rem;
@@ -51,6 +53,7 @@ header {
   color: #0070f3;
 }
 
+/* ================= Buttons ================= */
 .btn {
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -65,32 +68,13 @@ header {
   color: #fff;
 }
 
+/* ================= Sections ================= */
 .section {
   padding: 4rem 2rem;
 }
 
 .section--alt {
   background: #f0f4f8;
-}
-
-/* ================= Slider card hover ================= */
-.slider .card {
-  flex: 0 0 280px;
-  margin-right: 1.5rem;
-  background: #fff;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
-  opacity: 0;
-}
-
-.slider .card.is-visible {
-  opacity: 1;
-}
-
-.slider .card:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 /* ================= Fade-in ================= */
@@ -104,8 +88,8 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
-/* ================= Horizontal Apple-style scroll ================= */
 
+/* ================= Horizontal Apple-style Scroll ================= */
 .scroll-row {
   display: grid;
   grid-auto-flow: column;
@@ -146,82 +130,39 @@ header {
   box-shadow: 0 20px 50px rgba(0,0,0,0.12);
 }
 
-.social-links {
+/* ================= Social Links (Text-based) ================= */
+.social-links.subtle {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 28px;
+  margin-top: 32px;
+  flex-wrap: wrap;
 }
 
-.social-links a svg {
-  width: 32px;
-  height: 32px;
-  fill: #000; /* black Apple-style icons */
-  transition: transform 0.2s ease, fill 0.2s ease;
+.social-links.subtle a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b6b6b;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.social-links a:hover svg {
-  transform: translateY(-2px);
-  fill: #111; /* subtle hover effect */
+.social-links.subtle a:hover {
+  color: #2b2b2b;
+  transform: translateY(-1px);
 }
+
 /* ================= Responsive ================= */
 @media (max-width: 768px) {
-  .grid {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .metrics {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
   .nav-links {
-    display: none; /* hide for mobile, implement burger later if needed */
+    display: none;
   }
-/* ================= Horizontal Apple-style scroll ================= */
 
-.scroll-row {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(280px, 1fr);
-  gap: 2rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  .social-links.subtle {
+    gap: 20px;
+  }
 }
 
-.scroll-row::-webkit-scrollbar {
-  display: none;
-}
-
-.feature-card {
-  scroll-snap-align: start;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.feature-card h4 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.feature-card p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-}
-
-  /* ================= Apple-style Dark Mode ================= */
-
+/* ================= Apple-style Dark Mode ================= */
 @media (prefers-color-scheme: dark) {
   body {
     background: #0b0b0d;
@@ -233,10 +174,6 @@ header {
     backdrop-filter: saturate(180%) blur(20px);
   }
 
-  .nav-logo {
-    color: #f5f5f7;
-  }
-
   .nav-links a {
     color: #c7c7cc;
   }
@@ -246,11 +183,7 @@ header {
   }
 
   .hero {
-    background: radial-gradient(
-      circle at top,
-      #1c1c1e 0%,
-      #0b0b0d 60%
-    );
+    background: radial-gradient(circle at top, #1c1c1e 0%, #0b0b0d 60%);
   }
 
   .section {
@@ -278,22 +211,15 @@ header {
     background: #e5e5e7;
   }
 
-  /* Feature cards */
   .feature-card {
     background: #1c1c1e;
     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
   }
 
-  .feature-card p {
-    color: #c7c7cc;
-  }
-
   .feature-card:hover {
-    transform: translateY(-4px);
     box-shadow: 0 30px 70px rgba(0,0,0,0.8);
   }
 
-  /* Footer */
   footer {
     background: #0b0b0d;
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -303,40 +229,11 @@ header {
     color: #8e8e93;
   }
 
-  /* Social icons */
-  .social-links a {
+  .social-links.subtle a {
+    color: #8e8e93;
+  }
+
+  .social-links.subtle a:hover {
     color: #f5f5f7;
-    border-color: rgba(255,255,255,0.15);
-  }
-
-  .social-links a:hover {
-    background: #1c1c1e;
-  }
-/* ================= Social Links (Apple-style subtle) ================= */
-
-.social-links.subtle {
-  display: flex;
-  gap: 28px;
-  margin-top: 32px;
-  flex-wrap: wrap;
-}
-
-.social-links.subtle a {
-  font-size: 14px;
-  font-weight: 500;
-  color: #6b6b6b; /* faded grey */
-  text-decoration: none;
-  transition: color 0.25s ease, transform 0.25s ease;
-}
-
-.social-links.subtle a:hover {
-  color: #a1a1a1; /* lighter dark grey */
-  transform: translateY(-1px);
-}
-
-/* Mobile spacing */
-@media (max-width: 768px) {
-  .social-links.subtle {
-    gap: 20px;
   }
 }
