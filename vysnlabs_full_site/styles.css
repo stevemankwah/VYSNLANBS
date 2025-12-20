@@ -42,12 +42,13 @@ header {
   background: linear-gradient(to right, #e6f0ff, #ffffff);
 }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  color: #0a0a0a;
+.hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.hero h1 span {
+  color: #0070f3;
 }
 
 .btn {
