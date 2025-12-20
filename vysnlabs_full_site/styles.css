@@ -221,10 +221,13 @@ header {
 }
   /* ================= Apple-style Dark Mode ================= */
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #0b0b0d;
-    color: #f5f5f7;
+@media body.dark {
+  background: #0b0b0d;
+  color: #f5f5f7;
+}
+
+/* reuse same dark styles from above */
+
   }
 
   header {
