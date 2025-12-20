@@ -1,50 +1,342 @@
+/* ================= General Styles ================= */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: #111;
+  background: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  padding: 1rem 0;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(to right, #e6f0ff, #ffffff);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.hero h1 span {
+  color: #0070f3;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #0070f3;
+  color: #fff;
+}
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.section--alt {
+  background: #f0f4f8;
+}
+
+/* ================= Slider card hover ================= */
+.slider .card {
+  flex: 0 0 280px;
+  margin-right: 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+
+.slider .card.is-visible {
+  opacity: 1;
+}
+
+.slider .card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ================= Fade-in ================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ================= Horizontal Apple-style scroll ================= */
+
+.scroll-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.feature-card {
+  scroll-snap-align: start;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
 .social-links {
   display: flex;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a svg {
+  width: 32px;
+  height: 32px;
+  fill: #000; /* black Apple-style icons */
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.social-links a:hover svg {
+  transform: translateY(-2px);
+  fill: #111; /* subtle hover effect */
+}
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .metrics {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    display: none; /* hide for mobile, implement burger later if needed */
+  }
+/* ================= Horizontal Apple-style scroll ================= */
+
+.scroll-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.feature-card {
+  scroll-snap-align: start;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+  /* ================= Apple-style Dark Mode ================= */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0b0b0d;
+    color: #f5f5f7;
+  }
+
+  header {
+    background: rgba(11, 11, 13, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .nav-logo {
+    color: #f5f5f7;
+  }
+
+  .nav-links a {
+    color: #c7c7cc;
+  }
+
+  .nav-links a:hover {
+    color: #ffffff;
+  }
+
+  .hero {
+    background: radial-gradient(
+      circle at top,
+      #1c1c1e 0%,
+      #0b0b0d 60%
+    );
+  }
+
+  .section {
+    background: #0b0b0d;
+  }
+
+  .section--alt {
+    background: #111113;
+  }
+
+  h1, h2, h3, h4 {
+    color: #f5f5f7;
+  }
+
+  p {
+    color: #c7c7cc;
+  }
+
+  .btn-primary {
+    background: #ffffff;
+    color: #0b0b0d;
+  }
+
+  .btn-primary:hover {
+    background: #e5e5e7;
+  }
+
+  /* Feature cards */
+  .feature-card {
+    background: #1c1c1e;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  }
+
+  .feature-card p {
+    color: #c7c7cc;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+  }
+
+  /* Footer */
+  footer {
+    background: #0b0b0d;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-content p {
+    color: #8e8e93;
+  }
+
+  /* Social icons */
+  .social-links a {
+    color: #f5f5f7;
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  .social-links a:hover {
+    background: #1c1c1e;
+  }
+/* ================= Social Links (Apple-style subtle) ================= */
+
+.social-links.subtle {
+  display: flex;
+  gap: 28px;
+  margin-top: 32px;
   flex-wrap: wrap;
 }
 
-.social-links a {
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  position: relative;
-  transition: color 0.25s ease;
-}
-
-/* Apple-style underline reveal */
-.social-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.6);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #ffffff;
-}
-
-.social-links a:hover::after {
-  transform: scaleX(1);
-}
-
-/* Subtle variant */
 .social-links.subtle a {
-  opacity: 0.8;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b6b6b; /* faded grey */
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-/* Mobile optimisation */
-@media (max-width: 640px) {
-  .social-links {
-    gap: 16px;
+.social-links.subtle a:hover {
+  color: #a1a1a1; /* lighter dark grey */
+  transform: translateY(-1px);
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .social-links.subtle {
+    gap: 20px;
   }
 }
