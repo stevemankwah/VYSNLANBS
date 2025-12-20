@@ -163,3 +163,18 @@ header {
   transform: translateY(-2px);
   fill: #111; /* subtle hover effect */
 }
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .metrics {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    display: none; /* hide for mobile, implement burger later if needed */
+  }
