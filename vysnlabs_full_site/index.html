@@ -11,7 +11,7 @@
     gtag('config', 'G-ZGWN7JPEYQ');
   </script>
 
-  <!-- ================= Google AdSense (REQUIRED) ================= -->
+  <!-- ================= Google AdSense ================= -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
     crossorigin="anonymous">
@@ -21,273 +21,179 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>VYSNLABS — Secure Vehicle Identification Technology</title>
-  <meta name="description"
-    content="VYSNLABS provides secure NFC/RFID vehicle identification and number plate solutions for governments and authorities across Africa." />
 
-  <!-- ================= Styles ================= -->
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --bg-alt: #111;
-      --text: #eaeaea;
-      --muted: #a1a1a1;
-      --accent: #5eead4;
-      --card: #161616;
-      --border: #222;
-    }
+  <meta
+    name="description"
+    content="VYSNLABS provides secure, NFC/RFID-enabled vehicle identification and number plate solutions for governments and authorities."
+  />
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 24px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,10,10,.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 24px;
-    }
-
-    .nav-links a {
-      margin-left: 24px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    /* ================= Hero ================= */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(800px 400px at 20% 0%, #0f2a25, transparent),
-        radial-gradient(800px 400px at 80% 100%, #0b1f1b, transparent);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    .hero span { color: var(--muted); }
-
-    .hero p {
-      max-width: 600px;
-      color: var(--muted);
-      margin-bottom: 32px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 26px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #000;
-      font-weight: 600;
-    }
-
-    section { border-bottom: 1px solid var(--border); }
-    .section--alt { background: var(--bg-alt); }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    p { color: var(--muted); }
-
-    /* ================= Horizontal Scroll (Apple-style) ================= */
-    .scroll-row {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(280px, 1fr);
-      gap: 24px;
-      overflow-x: auto;
-      padding-top: 32px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .scroll-row::-webkit-scrollbar { display: none; }
-
-    .feature-card {
-      scroll-snap-align: start;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      min-height: 200px;
-    }
-
-    .feature-card h4 {
-      margin-bottom: 10px;
-    }
-
-    /* ================= Ads ================= */
-    .ad-container {
-      margin: 60px auto;
-      text-align: center;
-    }
-
-    /* ================= Contact ================= */
-    .social-links {
-      display: flex;
-      gap: 20px;
-      margin-top: 24px;
-    }
-
-    .social-links a {
-      padding: 12px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 14px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 24px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .container { padding: 60px 20px; }
-    }
-  </style>
-
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<!-- ================= Header ================= -->
-<header>
-  <div class="nav">
-    <strong>VYSNLABS</strong>
-    <nav class="nav-links">
-      <a href="#overview">Overview</a>
-      <a href="#capabilities">Solutions</a>
-      <a href="#impact">Technology</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- ================= Header ================= -->
+  <header>
+    <div class="container nav">
+      <div class="nav-logo">VYSNLABS</div>
+      <nav class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#capabilities">Solutions</a>
+        <a href="#impact">Technology</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- ================= Hero ================= -->
-<section class="hero">
-  <div class="container">
-    <h1>Tech-led vehicle identification<br><span>for a smarter, more secure Africa.</span></h1>
-    <p>
-      Secure NFC & RFID vehicle identification infrastructure for governments,
-      authorities and operators.
-    </p>
-    <a href="#capabilities" class="btn">Explore solutions</a>
-  </div>
-</section>
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="container hero-content fade-in">
+      <h1>
+        Tech-led vehicle identification<br />
+        <span>for a smarter, more secure Africa.</span>
+      </h1>
+      <p>
+        VYSNLABS delivers secure NFC and RFID-enabled vehicle identification
+        solutions, supporting governments, authorities and operators with
+        reliable, future-ready infrastructure.
+      </p>
+      <a href="#overview" class="btn btn-primary">Explore our solutions</a>
+    </div>
+  </section>
 
-<!-- ================= Ad Slot (Top) ================= -->
-<div class="ad-container">
-  <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-    data-ad-slot="1234567890"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+  <!-- ================= Ad Slot (Hero Footer – Responsive) ================= -->
+  <section class="ad-section">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="1234567890"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
 
-<!-- ================= Overview ================= -->
-<section id="overview">
-  <div class="container">
-    <h2>Secure infrastructure for modern mobility</h2>
-    <p>
-      VYSNLABS builds tamper-resistant vehicle identification systems combining
-      advanced hardware, secure software and national-scale deployment readiness.
-    </p>
-  </div>
-</section>
+  <!-- ================= Overview ================= -->
+  <section id="overview" class="section">
+    <div class="container fade-in">
+      <h2>Secure infrastructure for modern mobility.</h2>
+      <p>
+        VYSNLABS is a technology-led company focused on building secure,
+        tamper-resistant vehicle identification systems. Our solutions combine
+        advanced hardware, robust software and trusted partnerships to meet
+        national and regional requirements.
+      </p>
+    </div>
+  </section>
 
-<!-- ================= Solutions ================= -->
-<section id="capabilities" class="section--alt">
-  <div class="container">
-    <h2>Our solutions</h2>
-    <div class="scroll-row">
-      <div class="feature-card">
-        <h4>NFC / RFID Number Plates</h4>
-        <p>Secure embedded plates for enforcement, tracking and verification.</p>
-      </div>
-      <div class="feature-card">
-        <h4>Vehicle Identification Systems</h4>
-        <p>Automated checkpoints, borders and tolling verification.</p>
-      </div>
-      <div class="feature-card">
-        <h4>Security & Software</h4>
-        <p>APIs, dashboards and national registry integrations.</p>
+  <!-- ================= Solutions ================= -->
+  <section id="capabilities" class="section section--alt">
+    <div class="container">
+      <h2 class="fade-in">Our solutions</h2>
+
+      <div class="scroll-row fade-in">
+        <article class="feature-card">
+          <h4>NFC / RFID Number Plates</h4>
+          <p>Secure aluminium plates embedded with RFID or NFC technology.</p>
+        </article>
+
+        <article class="feature-card">
+          <h4>Vehicle Identification Systems</h4>
+          <p>Automated verification at borders, checkpoints and tolling zones.</p>
+        </article>
+
+        <article class="feature-card">
+          <h4>Security & Software Integration</h4>
+          <p>APIs, dashboards and national registry integrations.</p>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= Technology ================= -->
-<section id="impact">
-  <div class="container">
-    <h2>Technology & infrastructure</h2>
-    <div class="scroll-row">
-      <div class="feature-card">
-        <h4>Security-first</h4>
-        <p>Encryption, access control and auditability.</p>
-      </div>
-      <div class="feature-card">
-        <h4>Deployment-ready</h4>
-        <p>From pilots to national rollouts.</p>
-      </div>
-      <div class="feature-card">
-        <h4>Government-grade</h4>
-        <p>Compliance-driven and durable.</p>
+  <!-- ================= Inline Ad (Between Sections) ================= -->
+  <section class="ad-section">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="2345678901"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
+
+  <!-- ================= Technology ================= -->
+  <section id="impact" class="section">
+    <div class="container">
+      <h2 class="fade-in">Technology & infrastructure</h2>
+
+      <div class="scroll-row fade-in">
+        <article class="feature-card">
+          <h4>Security-first</h4>
+          <p>Encryption, access control and auditability.</p>
+        </article>
+
+        <article class="feature-card">
+          <h4>Deployment-ready</h4>
+          <p>Scalable from pilots to nationwide rollouts.</p>
+        </article>
+
+        <article class="feature-card">
+          <h4>Government-grade</h4>
+          <p>Built for compliance, durability and resilience.</p>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= Contact ================= -->
-<section id="contact" class="section--alt">
-  <div class="container">
-    <h2>Engage with VYSNLABS</h2>
-    <p>Email: sales@vysnlabs.com<br>Phone: +233 20 020 0012<br>Accra, Ghana</p>
+  <!-- ================= Contact ================= -->
+  <section id="contact" class="section section--alt">
+    <div class="container fade-in">
+      <h2>Engage with VYSNLABS</h2>
+      <p>
+        Ready to explore a pilot, partnership or nationwide deployment?
+      </p>
 
-    <div class="social-links">
-      <a href="https://x.com/vysnlabs" target="_blank">X (Twitter)</a>
-      <a href="https://instagram.com/vysnlabs" target="_blank">Instagram</a>
-      <a href="https://wa.me/233200200012" target="_blank">WhatsApp Business</a>
+      <div class="contact-details">
+        <p>
+          <strong>Email:</strong> sales@vysnlabs.com<br />
+          <strong>Phone:</strong> +233 20 020 0012<br />
+          <strong>Location:</strong> Accra, Ghana
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  © 2025 VYSNLABS Limited. Confidential & proprietary.
-</footer>
+  <!-- ================= Footer Ad (Optional) ================= -->
+  <section class="ad-section">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="3456789012"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <footer>
+    <div class="container footer-content">
+      <p>© 2025 VYSNLABS Limited. All rights reserved.</p>
+      <p>Confidential and proprietary. Prepared for tender evaluation only.</p>
+    </div>
+  </footer>
+
+  <!-- ================= Scripts ================= -->
+  <script src="motion.js"></script>
+  <script src="slider.js"></script>
+  <script src="theme.js"></script>
 
 </body>
 </html>
