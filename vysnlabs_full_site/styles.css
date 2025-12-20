@@ -312,4 +312,32 @@ header {
   .social-links a:hover {
     background: #1c1c1e;
   }
+/* ================= Social Links (Apple-style subtle) ================= */
+
+.social-links.subtle {
+  display: flex;
+  gap: 28px;
+  margin-top: 32px;
+  flex-wrap: wrap;
 }
+
+.social-links.subtle a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b6b6b; /* faded grey */
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.social-links.subtle a:hover {
+  color: #a1a1a1; /* lighter dark grey */
+  transform: translateY(-1px);
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .social-links.subtle {
+    gap: 20px;
+  }
+}
+
