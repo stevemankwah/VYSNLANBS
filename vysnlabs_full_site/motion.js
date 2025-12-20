@@ -3,11 +3,16 @@ const observer = new IntersectionObserver(
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove("is-visible");
       }
     });
   },
-  { threshold: 0.15 }
+  {
+    threshold: 0.35
+  }
 );
 
-document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+document
+  .querySelectorAll(".fade-in")
+  .forEach(el => observer.observe(el));
