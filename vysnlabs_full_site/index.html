@@ -105,6 +105,95 @@
       </p>
     </div>
   </section>
+  <section id="media" class="section section--alt">
+  <div class="container">
+    <h2 class="fade-in">Media & demos</h2>
+    <p class="fade-in subtle">
+      Short clips, deployments, and product visuals — optimised for fast loading.
+    </p>
+
+    <div id="mediaGrid" class="media-grid fade-in"></div>
+  </div>
+</section>
+
+<script>
+  // 1) Put your media items here (or move to /media.json later)
+  const MEDIA = [
+    {
+      type: "video",
+      title: "Checkpoint verification demo",
+      poster: "https://YOUR-CDN/vysnlabs/demo-poster.jpg",
+      src: "https://YOUR-CDN/vysnlabs/demo.mp4"
+    },
+    {
+      type: "image",
+      title: "RFID/NFC number plate",
+      src: "https://YOUR-CDN/vysnlabs/plate.jpg"
+    },
+    {
+      type: "image",
+      title: "Operations dashboard",
+      src: "https://YOUR-CDN/vysnlabs/dashboard.jpg"
+    },
+    {
+      type: "video",
+      title: "Manufacturing / embossing reel",
+      poster: "https://YOUR-CDN/vysnlabs/manufacture-poster.jpg",
+      src: "https://YOUR-CDN/vysnlabs/manufacture.mp4"
+    }
+  ];
+
+  const grid = document.getElementById("mediaGrid");
+
+  grid.innerHTML = MEDIA.map(item => {
+    if (item.type === "image") {
+      return `
+        <figure class="media-card">
+          <img loading="lazy" src="${item.src}" alt="${item.title}" />
+          <figcaption>${item.title}</figcaption>
+        </figure>
+      `;
+    }
+    return `
+      <figure class="media-card">
+        <video class="lazy-video" muted playsinline preload="none"
+          poster="${item.poster}" data-src="${item.src}"></video>
+        <button class="media-play" type="button" aria-label="Play ${item.title}">Play</button>
+        <figcaption>${item.title}</figcaption>
+      </figure>
+    `;
+  }).join("");
+
+  // 2) Lazy-load videos only when visible
+  const vids = document.querySelectorAll("video.lazy-video");
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const v = e.target;
+      if (v.dataset.src) {
+        v.src = v.dataset.src;
+        v.removeAttribute("data-src");
+        v.load();
+      }
+      io.unobserve(v);
+    });
+  }, { threshold: 0.25 });
+
+  vids.forEach(v => io.observe(v));
+
+  // 3) Click to play/pause (no autoplay in grid)
+  document.querySelectorAll(".media-card").forEach(card => {
+    const v = card.querySelector("video");
+    const btn = card.querySelector(".media-play");
+    if (!v || !btn) return;
+
+    btn.addEventListener("click", () => {
+      if (v.paused) v.play().catch(() => {});
+      else v.pause();
+    });
+  });
+</script>
+
 
   <!-- ================= Long-form Content ================= -->
   <section class="section">
