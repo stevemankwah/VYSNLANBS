@@ -33,7 +33,17 @@
   <!-- ================= Header ================= -->
   <header>
     <div class="container nav">
-      <div class="nav-logo">VYSNLABS</div>
+      <!-- Logo (clickable, Apple-style) -->
+      <a href="/" class="nav-logo" aria-label="VYSNLABS home">
+        <img
+          src="https://res.cloudinary.com/dkaxmz0h4/image/upload/v1766348367/VYSNLABS_text_Logo_osicog.png"
+          alt="VYSNLABS"
+          class="nav-logo-img"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+
       <nav class="nav-links">
         <a href="#overview">Overview</a>
         <a href="#capabilities">Solutions</a>
@@ -43,8 +53,26 @@
     </div>
   </header>
 
-  <!-- ================= Hero ================= -->
-  <section class="hero">
+  <!-- ================= Hero (Video Background) ================= -->
+  <section class="hero hero--video">
+    <video
+      class="hero__bg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="https://res.cloudinary.com/dkaxmz0h4/image/upload/f_auto,q_auto,w_1920/v1766348367/VYSNLABS_text_Logo_osicog.png"
+      aria-hidden="true"
+    >
+      <source
+        src="https://res.cloudinary.com/dkaxmz0h4/video/upload/f_auto,q_auto/test2_odwcqt.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <div class="hero__overlay" aria-hidden="true"></div>
+
     <div class="container hero-content fade-in">
       <h1>
         Tech-led vehicle identification<br />
